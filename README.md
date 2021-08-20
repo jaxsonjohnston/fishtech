@@ -1,2 +1,2 @@
-# fishtech
+# Fishtech
 Repository for interview
