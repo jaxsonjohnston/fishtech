@@ -6,13 +6,6 @@ const app = express(),
       bodyParser = require("body-parser");
 const port = process.env.PORT || 3080;
 
-// app.listen(port, () => console.log(`Listening on port ${port}`));
-
-// app.get('/express_backend', (req, res) => {
-//     res.send({ express: 'Hello World' });
-// });
-
-// place holder for the data
 const data = [];
 
 app.use(bodyParser.json());
@@ -23,22 +16,18 @@ app.get('/backend/data', (req, res) => {
 });
 
 app.get('/', (req,res) => {
-    res.send('App Works !!!!');
-});
-
-app.get('/search', (req, res) => {
-  whois.lookup('google.com', (err, data) => {
-    if (err) {
-      console.log(`Error with request ${req}`);
-      res = `Error with request ${req}`;
-    }
-    else {
-      console.log(data);
-      res = data;
-    }
-  })
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 })
+
+app.get('/search/:address', searchDomain);
 
 app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
 });
+
+function searchDomain (req, res) {
+  whois.lookup(req.params.address, (err, data) => {
+    if (err) res.send(err);
+    else res.send(data);
+  })
+}

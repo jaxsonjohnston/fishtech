@@ -43,33 +43,4 @@ export default class App extends Component {
       </div>
     )
   }
-
-  //   super();
-  //   this.state = {apiState: null, resoponse: "", address: "" };
-  //   this.whois = new Whois();
-  //   this.whois.onChangeListener((state, response) => {
-  //     this.setState({ apiState: state, response });
-  //   });
-  //   this.submitAddress = this.submitAddress.bind(this);
-  // }
-
-  // submitAddress(address) {
-  //   this.whois.submit(address);
-  // }
-
-
-
-  // render() {
-  //   return (
-  //     <div className="App">
-  //       <header className="App-header">
-  //         <p>Input something to find out about it!</p>
-  //       </header>
-  //       <Request submit={ this.submitAddress }/>
-  //       <Response
-  //         apiState={ this.state.apiState }
-  //         response={ this.state.resoponse }
-  //       />
-  //     </div>
-  //   )
 }
