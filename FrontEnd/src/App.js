@@ -7,11 +7,6 @@ export default class App extends Component {
   state = {
     whoIsData: ""
   }
-
-  constructor() {
-    super();
-  }
-
     
   submitRequest = () => {
     var address = document.getElementById('inputValue').value;
